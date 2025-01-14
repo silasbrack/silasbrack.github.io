@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>How I Use Nix in Production</title>
+    <link rel="stylesheet" href="../tufte.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <article>
+      <h1 id="tufte-css">How I Use Nix in Production</h1>
+      <p class="subtitle">Building a lightweight & reproducible production environment</p>
+
+      <section>
+        <p>
+          <ul>
+            <li>Philosophy</li>
+            <li><a href="#dev">Development Environment</a></li>
+            <li><a href="#test">Test Environment</a></li>
+            <li>Building the Application</li>
+            <li><a href="#deploy">Deploying the Application</a></li>
+            <li>CI/CD</li>
+            <li>Integration Testing</li>
+          </ul>
+        </p>
+
+        <h2 id="phil">Philosophy</h2>
+        <p>
+          I use NixOS and systemd to orchestrate the application.
+          No Docker, no Kubernetes.
+        </p>
+
+        <h2 id="dev">Development Environment</h2>
+        <p>We can start a development shell by running <code>nix develop</code>.</p> 
+                <pre>
+                <code>devShells.system.default = {
+  buildInputs = [
+    pkgs.gleam
+    pkgs.erlang_27
+    pkgs.rebar3
+    pkgs.inotify-tools
+    pkgs.nodejs_22
+  ];
+};</code>
+                </pre>
+
+        <h2 id="test">Test Environment</h2>
+        <pre>
+          <code>nixosConfigurations.vm = nixpkgs.lib.nixosSystem {
+  system = "x86_64-linux";
+  modules = [
+    (import ./vm.nix ( { pkgs = import nixpkgs {}; lib = nixpkgs.lib; my_app = self.packages."x86_64-linux".default; } ))
+    nixos-shell.nixosModules.nixos-shell
+  ];
+};</code>
+          </pre>
+
+        <pre>
+          <code>{ pkgs, lib, my_app, ... }:
+let
+  port = 8008;
+  pg_port = 44537;
+in {
+  system.stateVersion = "24.11";
+
+  environment.sessionVariables = rec {
+    PORT = port;
+    PG_PORT = pg_port;
+  };
+
+  imports = [ ./module.nix ];
+
+  services.my_app = {
+    enable = true;
+    package = my_app;
+    port = port;
+  };
+  virtualisation.forwardPorts = [ { from = "host"; host.port = port; guest.port = port; } ];
+
+  services.postgresql.enable = true;
+}</code>
+        </pre>
+
+        <h2 id="deploy">Deploying the Application</h2>
+        We use nix modules
+        <pre>
+          <code>{ config, lib, pkgs, ... }:
+
+with lib;
+
+let
+  pkg = import ./.;
+  migrations = pkg.migrations;
+  server = pkg.server;
+  cfg = config.services.my_app;
+in {
+  options = {
+    services.my_app = {
+      enable = mkEnableOption "My App";
+
+      package = mkOption {
+        defaultText = lib.literalMD "`packages.default` from the my_app flake";
+      };
+
+      environment = mkOption {
+        type = types.enum [ "dev" "prod" ];
+        default = "dev";
+        example = "prod";
+        description = "The environment (dev / prod) to deploy as.";
+      };
+
+      user = mkOption {
+        type = types.str;
+        default = "my_app_user";
+        description = "User account under which my app runs.";
+      };
+
+      port = mkOption {
+        type = types.nullOr types.int;
+        default = 3003;
+        example = 8080;
+        description = ''
+          The port to bind my app server to.
+        '';
+      };
+    };
+  };
+
+  config = mkIf cfg.enable {
+    networking.firewall.allowedTCPPorts = [ cfg.port ];
+
+    users.groups.${cfg.user} = {};
+    users.users.${cfg.user} = {
+      name = cfg.user;
+      group = cfg.user;
+      description = "My app service user";
+      isSystemUser = true;
+      createHome = false;
+    };
+
+    systemd.services.my_app = {
+      wantedBy = [ "multi-user.target" ];
+      description = "Run my app.";
+      after = [ "network.target" ];
+      serviceConfig = {
+        Type = "simple";
+        User = cfg.user;
+        ExecStart = "${cfg.package}/bin/my_app";
+      };
+      environment = {
+        PORT = builtins.toString cfg.port;
+      };
+    };
+  };
+}</code>
+      </pre>
+      </section>
+    </article>
+  </body>
+</html>
