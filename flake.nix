@@ -19,7 +19,7 @@
         };
       in
       {
-        devShells.x86_64-linux.default = {
+        devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
             prettierd
           ];
