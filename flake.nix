@@ -1,5 +1,5 @@
 {
-  description = "My gleam monorepo";
+  description = "My web page (www.silasbrack.com)";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
@@ -21,7 +21,7 @@
       {
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
-            prettierd
+            pandoc
           ];
         };
       }
