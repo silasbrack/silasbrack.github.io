@@ -2,7 +2,7 @@
 
 /* Tufte CSS styles */
 html {
-    font-size: 13px;
+    font-size: 16px;
 }
 
 body {
@@ -10,7 +10,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding-left: 12.5%;
-    font-family: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+    font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
     background-color: #fffff8;
     color: #111;
     max-width: 1400px;
