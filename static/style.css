@@ -2,7 +2,7 @@
 
 /* Tufte CSS styles */
 html {
-    font-size: 16px;
+    font-size: clamp(12px, 2vw, 16px);
 }
 
 body {
@@ -26,26 +26,28 @@ body {
 }
 
 h1 {
+    font-family: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+    font-variant-caps: small-caps;
     font-weight: 400;
     margin-top: 4rem;
     margin-bottom: 1.5rem;
-    font-size: 3.2rem;
+    font-size: clamp(28px, 2vw, 36px);
     line-height: 1;
 }
 
 h2 {
+    font-family: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
     font-style: italic;
     font-weight: 400;
     margin-top: 2.1rem;
     margin-bottom: 1.4rem;
-    font-size: 2.2rem;
+    font-size: clamp(16px, 2vw, 18px);
     line-height: 1;
 }
 
 h3 {
     font-style: italic;
     font-weight: 400;
-    font-size: 1.7rem;
     margin-top: 2rem;
     margin-bottom: 1.4rem;
     line-height: 1;
@@ -62,10 +64,11 @@ hr {
 }
 
 p.subtitle {
+    font-family: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
     font-style: italic;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    font-size: 1.8rem;
+    font-size: clamp(20px, 2vw, 24px);
     display: block;
     line-height: 1;
 }
@@ -341,17 +344,18 @@ table.fullwidth {
 
 div.table-wrapper {
     overflow-x: auto;
-    font-family: "Trebuchet MS", "Gill Sans", "Gill Sans MT", sans-serif;
+    font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
 }
 
 .sans {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
     letter-spacing: 0.03em;
 }
 
 code,
 pre > code {
     font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
     font-size: 1rem;
     line-height: 1.42;
     -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
@@ -420,6 +424,13 @@ label.margin-toggle:not(.sidenote-number) {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.icon {
+    margin-right: 5px;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
 }
 
 @media (max-width: 760px) {
