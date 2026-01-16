@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-html {
-    font-size: clamp(12px, 2vw, 16px);
-}
-
 @font-face {
   font-family: cooper-hewitt;
   font-style: normal;
@@ -37,35 +33,35 @@ html {
 }
 
 @font-face {
-  font-family: charter;
+  font-family: vollkorn;
   font-style: normal;
   font-weight: normal;
   font-display: swap;
-  src: url('charter/charter_regular.woff2') format('woff2');
+  src: url('vollkorn/Vollkorn-Regular.woff2') format('woff2');
 }
 @font-face {
-  font-family: charter;
+  font-family: vollkorn;
   font-style: italic;
   font-weight: normal;
   font-display: swap;
-  src: url('charter/charter_italic.woff2') format('woff2');
+  src: url('vollkorn/Vollkorn-Italic.woff2') format('woff2');
 }
 @font-face {
-  font-family: charter;
+  font-family: vollkorn;
   font-style: normal;
   font-weight: bold;
   font-display: swap;
-  src: url('charter/charter_bold.woff2') format('woff2');
+  src: url('vollkorn/Vollkorn-Bold.woff2') format('woff2');
 }
 @font-face {
-  font-family: charter;
+  font-family: vollkorn;
   font-style: italic;
   font-weight: bold;
   font-display: swap;
-  src: url('charter/charter_bold_italic.woff2') format('woff2');
+  src: url('vollkorn/Vollkorn-BoldItalic.woff2') format('woff2');
 }
-.charter {
-    font-family: Charter, 'Bitstream Charter', charter, 'Sitka Text', Cambria, serif;
+.vollkorn {
+    font-family: Vollkorn, vollkorn, serif;
 }
 
 body {
@@ -73,7 +69,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding-left: 12.5%;
-    font-family: Charter, 'Bitstream Charter', charter, 'Sitka Text', Cambria, serif;
+    font-family: Vollkorn, vollkorn, serif;
     background-color: #fffff8;
     color: #111;
     max-width: 1400px;
@@ -90,28 +86,24 @@ body {
 
 h1 {
     font-family: cooper-hewitt, Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
-    font-variant-caps: small-caps;
-    font-weight: bold;
+    font-size: 1.6rem;
     margin-top: 4rem;
     margin-bottom: 1.5rem;
-    font-size: clamp(28px, 2vw, 36px);
     line-height: 1;
 }
 
 h2 {
     font-family: cooper-hewitt, Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
-    font-variant-caps: small-caps;
-    font-style: italic;
-    font-weight: bold;
+    font-weight: normal;
+    font-size: 1.6rem;
     margin-top: 2.1rem;
     margin-bottom: 1.4rem;
-    font-size: clamp(16px, 2vw, 20px);
     line-height: 1;
 }
 
 h3 {
-    font-style: italic;
-    font-weight: 400;
+    font-weight: normal;
+    font-size: 1.6rem;
     margin-top: 2rem;
     margin-bottom: 1.4rem;
     line-height: 1;
@@ -127,12 +119,19 @@ hr {
     padding: 0;
 }
 
+p.title {
+    font-family: cooper-hewitt, Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+    font-weight: bold;
+    font-size: 2.2rem;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    line-height: 1;
+}
 p.subtitle {
     font-family: cooper-hewitt, Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
-    font-style: italic;
+    font-style: normal;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    font-size: clamp(20px, 2vw, 24px);
     display: block;
     line-height: 1;
 }
