@@ -33,35 +33,35 @@
 }
 
 @font-face {
-  font-family: charter;
+  font-family: vollkorn;
   font-style: normal;
   font-weight: normal;
   font-display: swap;
-  src: url('charter/charter_regular.woff2') format('woff2');
+  src: url('vollkorn/Vollkorn-Regular.woff2') format('woff2');
 }
 @font-face {
-  font-family: charter;
+  font-family: vollkorn;
   font-style: italic;
   font-weight: normal;
   font-display: swap;
-  src: url('charter/charter_italic.woff2') format('woff2');
+  src: url('vollkorn/Vollkorn-Italic.woff2') format('woff2');
 }
 @font-face {
-  font-family: charter;
+  font-family: vollkorn;
   font-style: normal;
   font-weight: bold;
   font-display: swap;
-  src: url('charter/charter_bold.woff2') format('woff2');
+  src: url('vollkorn/Vollkorn-Bold.woff2') format('woff2');
 }
 @font-face {
-  font-family: charter;
+  font-family: vollkorn;
   font-style: italic;
   font-weight: bold;
   font-display: swap;
-  src: url('charter/charter_bold_italic.woff2') format('woff2');
+  src: url('vollkorn/Vollkorn-BoldItalic.woff2') format('woff2');
 }
-.charter {
-    font-family: Charter, 'Bitstream Charter', charter, 'Sitka Text', Cambria, serif;
+.vollkorn {
+    font-family: Vollkorn, vollkorn, serif;
 }
 
 @font-face {
@@ -118,14 +118,31 @@ body {
 
 h1 {
     font-family: cooper-hewitt, Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+<<<<<<< HEAD
     font-size: 1.8rem;
+||||||| 4b2e708
+    font-variant-caps: small-caps;
+    font-weight: bold;
+=======
+    font-size: 1.6rem;
+>>>>>>> main
     margin-top: 4rem;
     margin-bottom: 1.5rem;
     line-height: 1;
 }
 
 h2 {
+<<<<<<< HEAD
     font-weight: bold;
+||||||| 4b2e708
+    font-family: cooper-hewitt, Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+    font-variant-caps: small-caps;
+    font-style: italic;
+    font-weight: bold;
+=======
+    font-family: cooper-hewitt, Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+    font-weight: normal;
+>>>>>>> main
     font-size: 1.6rem;
     margin-top: 2.1rem;
     margin-bottom: 1.4rem;
@@ -134,6 +151,7 @@ h2 {
 
 h3 {
     font-weight: normal;
+<<<<<<< HEAD
     font-size: 1.5rem;
     font-variant-caps: small-caps;
     margin-bottom: 0;
@@ -142,6 +160,18 @@ h3 {
 
 h3 + p {
     margin-top: 5px;
+||||||| 4b2e708
+    font-style: italic;
+    font-weight: 400;
+    margin-top: 2rem;
+    margin-bottom: 1.4rem;
+    line-height: 1;
+=======
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    margin-bottom: 1.4rem;
+    line-height: 1;
+>>>>>>> main
 }
 
 hr {
@@ -164,6 +194,12 @@ p.title {
 }
 p.subtitle {
     font-family: cooper-hewitt, Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+<<<<<<< HEAD
+||||||| 4b2e708
+    font-style: italic;
+=======
+    font-style: normal;
+>>>>>>> main
     margin-top: 1rem;
     margin-bottom: 1rem;
     display: block;
