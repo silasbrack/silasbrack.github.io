@@ -81,6 +81,38 @@ html {
     font-family: Vollkorn, vollkorn, serif;
 }
 
+@font-face {
+  font-family: vollkorn;
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('vollkorn/Vollkorn-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: vollkorn;
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url('vollkorn/Vollkorn-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: vollkorn;
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url('vollkorn/Vollkorn-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: vollkorn;
+  font-style: italic;
+  font-weight: bold;
+  font-display: swap;
+  src: url('vollkorn/Vollkorn-BoldItalic.woff2') format('woff2');
+}
+.vollkorn {
+    font-family: Vollkorn, vollkorn, serif;
+}
+
 body {
     width: 87.5%;
     margin-left: auto;
@@ -110,9 +142,7 @@ h1 {
 }
 
 h2 {
-    font-family: cooper-hewitt, Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
-    font-weight: normal;
-    font-size: 1.3rem;
+    font-weight: bold;
     margin-top: 2.1rem;
     margin-bottom: 1.4rem;
     line-height: 1;
@@ -121,9 +151,6 @@ h2 {
 h3 {
     font-weight: normal;
     font-size: 1.3rem;
-    margin-top: 2rem;
-    margin-bottom: 1.4rem;
-    line-height: 1;
 }
 
 hr {
@@ -146,7 +173,6 @@ p.title {
 }
 p.subtitle {
     font-family: cooper-hewitt, Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
-    font-style: normal;
     margin-top: 1rem;
     margin-bottom: 1rem;
     display: block;
