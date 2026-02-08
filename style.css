@@ -17,108 +17,12 @@ html {
     }
 }
 
-@font-face {
-  font-family: cooper-hewitt;
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url('cooper-hewitt/CooperHewitt-Medium.woff') format('woff');
-}
-@font-face {
-  font-family: cooper-hewitt;
-  font-style: italic;
-  font-weight: normal;
-  font-display: swap;
-  src: url('cooper-hewitt/CooperHewitt-MediumItalic.woff') format('woff');
-}
-@font-face {
-  font-family: cooper-hewitt;
-  font-style: normal;
-  font-weight: bold;
-  font-display: swap;
-  src: url('cooper-hewitt/CooperHewitt-Bold.woff') format('woff');
-}
-@font-face {
-  font-family: cooper-hewitt;
-  font-style: italic;
-  font-weight: bold;
-  font-display: swap;
-  src: url('cooper-hewitt/CooperHewitt-BoldItalic.woff') format('woff');
-}
-.cooper-hewitt {
-    font-family: cooper-hewitt, Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
-}
-
-@font-face {
-  font-family: vollkorn;
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url('vollkorn/Vollkorn-Regular.woff2') format('woff2');
-}
-@font-face {
-  font-family: vollkorn;
-  font-style: italic;
-  font-weight: normal;
-  font-display: swap;
-  src: url('vollkorn/Vollkorn-Italic.woff2') format('woff2');
-}
-@font-face {
-  font-family: vollkorn;
-  font-style: normal;
-  font-weight: bold;
-  font-display: swap;
-  src: url('vollkorn/Vollkorn-Bold.woff2') format('woff2');
-}
-@font-face {
-  font-family: vollkorn;
-  font-style: italic;
-  font-weight: bold;
-  font-display: swap;
-  src: url('vollkorn/Vollkorn-BoldItalic.woff2') format('woff2');
-}
-.vollkorn {
-    font-family: Vollkorn, vollkorn, serif;
-}
-
-@font-face {
-  font-family: vollkorn;
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url('vollkorn/Vollkorn-Regular.woff2') format('woff2');
-}
-@font-face {
-  font-family: vollkorn;
-  font-style: italic;
-  font-weight: normal;
-  font-display: swap;
-  src: url('vollkorn/Vollkorn-Italic.woff2') format('woff2');
-}
-@font-face {
-  font-family: vollkorn;
-  font-style: normal;
-  font-weight: bold;
-  font-display: swap;
-  src: url('vollkorn/Vollkorn-Bold.woff2') format('woff2');
-}
-@font-face {
-  font-family: vollkorn;
-  font-style: italic;
-  font-weight: bold;
-  font-display: swap;
-  src: url('vollkorn/Vollkorn-BoldItalic.woff2') format('woff2');
-}
-.vollkorn {
-    font-family: Vollkorn, vollkorn, serif;
-}
-
 body {
     width: 87.5%;
     margin-left: auto;
     margin-right: auto;
     padding-left: 12.5%;
-    font-family: Vollkorn, vollkorn, serif;
+    font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     background-color: #fffff8;
     color: #111;
     max-width: 1400px;
@@ -134,7 +38,7 @@ body {
 }
 
 h1 {
-    font-family: cooper-hewitt, Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
     font-size: 1.3rem;
     margin-top: 2.5rem;
     margin-bottom: 1.5rem;
@@ -164,7 +68,7 @@ hr {
 }
 
 p.title {
-    font-family: cooper-hewitt, Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
     font-weight: bold;
     font-size: 1.5rem;
     margin-top: 2.5rem;
@@ -172,7 +76,7 @@ p.title {
     line-height: 1;
 }
 p.subtitle {
-    font-family: cooper-hewitt, Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
     margin-top: 1rem;
     margin-bottom: 1rem;
     display: block;
@@ -450,18 +354,17 @@ table.fullwidth {
 
 div.table-wrapper {
     overflow-x: auto;
-    font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
 }
 
 .sans {
-    font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
     letter-spacing: 0.03em;
 }
 
 code,
 pre > code {
-    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+    font-family: Menlo, Consolas, Monaco, Adwaita Mono, Liberation Mono, Lucida Console, monospace;
     font-size: 0.7rem;
     line-height: 1.42;
     -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
