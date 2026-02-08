@@ -1,17 +1,33 @@
-@charset "UTF-8";
+/* CSS Custom Properties */
+:root {
+    --bg-color: #fffff8;
+    --text-color: #111;
+    --text-muted: #ccc;
+    --selection-color: #b4d5fe;
+    --font-sans: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
+    --font-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #151515;
+        --text-color: #ddd;
+        --text-muted: #555;
+    }
+}
 
 /* Fluid typography: scales font size based on viewport width */
 html {
     font-size: 2.4vw;
 }
 
-@media all and (min-width: 1000px) {
+@media (min-width: 1000px) {
     html {
         font-size: 22px;
     }
 }
 
-@media all and (max-width: 760px) {
+@media (max-width: 760px) {
     html {
         font-size: 18px;
     }
@@ -22,73 +38,31 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding-left: 12.5%;
-    font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-    background-color: #fffff8;
-    color: #111;
+    font-family: var(--font-serif);
+    background-color: var(--bg-color);
+    color: var(--text-color);
     max-width: 1400px;
     counter-reset: sidenote-counter;
 }
 
-/* Adds dark mode */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #151515;
-        color: #ddd;
-    }
-}
-
 h1 {
-    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
-    font-size: 1.3rem;
-    margin-top: 2.5rem;
-    margin-bottom: 1.5rem;
-    line-height: 1;
-}
-
-h2 {
-    font-weight: bold;
-    margin-top: 2.1rem;
-    margin-bottom: 1.4rem;
-    line-height: 1;
-}
-
-h3 {
-    font-weight: normal;
-    font-size: 1.3rem;
-}
-
-hr {
-    display: block;
-    height: 1px;
-    width: 55%;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-p.title {
-    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
+    font-family: var(--font-sans);
     font-weight: bold;
     font-size: 1.5rem;
     margin-top: 2.5rem;
     margin-bottom: 1.5rem;
     line-height: 1;
 }
+
 p.subtitle {
-    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
+    font-family: var(--font-sans);
     margin-top: 1rem;
     margin-bottom: 1rem;
-    display: block;
     line-height: 1;
 }
 
-.danger {
-    color: red;
-}
-
 article {
-    padding: 3rem 0rem;
+    padding: 3rem 0;
 }
 
 section {
@@ -96,209 +70,31 @@ section {
     padding-bottom: 1rem;
 }
 
-p,
-dl,
-ol,
-ul {
+p {
     font-size: 1rem;
     line-height: 1.4rem;
-}
-
-p {
     margin-top: 1.4rem;
     margin-bottom: 1.4rem;
-    padding-right: 0;
-    vertical-align: baseline;
 }
 
-/* Chapter Epigraphs */
-div.epigraph {
-    margin: 5em 0;
-}
-
-div.epigraph > blockquote {
-    margin-top: 3em;
-    margin-bottom: 3em;
-}
-
-div.epigraph > blockquote,
-div.epigraph > blockquote > p {
-    font-style: italic;
-}
-
-div.epigraph > blockquote > footer {
-    font-style: normal;
-}
-
-div.epigraph > blockquote > footer > cite {
-    font-style: italic;
-}
-/* end chapter epigraphs styles */
-
-blockquote {
-    font-size: 1rem;
-}
-
-blockquote p {
-    width: 55%;
-    margin-right: 40px;
-}
-
-blockquote footer {
-    width: 55%;
-    font-size: 0.75rem;
-    text-align: right;
-}
-
-section > p,
-section > footer,
-section > table {
+section > p {
     width: 55%;
 }
 
-/* 50 + 5 == 55, to be the same width as paragraph */
-section > dl,
-section > ol,
-section > ul {
-    width: 50%;
-    -webkit-padding-start: 5%;
-}
-
-dt:not(:first-child),
-li:not(:first-child) {
-    margin-top: 0.25rem;
-}
-
-figure {
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    max-width: 55%;
-    -webkit-margin-start: 0;
-    -webkit-margin-end: 0;
-    margin: 0 0 3em 0;
-}
-
-figcaption {
-    float: right;
-    clear: right;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 0.75rem;
-    line-height: 1.6;
-    vertical-align: baseline;
-    position: relative;
-    max-width: 40%;
-}
-
-figure.fullwidth figcaption {
-    margin-right: 24%;
-}
-
-/* Links: replicate underline that clears descenders */
+/* Links */
 a:link,
 a:visited {
     color: inherit;
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;
+    text-underline-offset: 0.1em;
 }
 
-.no-tufte-underline:link {
-    background: unset;
-    text-shadow: unset;
+::selection {
+    background: var(--selection-color);
 }
 
-a:link,
-.tufte-underline,
-.hover-tufte-underline:hover {
-    text-decoration: none;
-    background:
-        -webkit-linear-gradient(#fffff8, #fffff8),
-        -webkit-linear-gradient(#fffff8, #fffff8),
-        -webkit-linear-gradient(currentColor, currentColor);
-    background:
-        linear-gradient(#fffff8, #fffff8), linear-gradient(#fffff8, #fffff8),
-        linear-gradient(currentColor, currentColor);
-    -webkit-background-size:
-        0.05em 1px,
-        0.05em 1px,
-        1px 1px;
-    -moz-background-size:
-        0.05em 1px,
-        0.05em 1px,
-        1px 1px;
-    background-size:
-        0.05em 1px,
-        0.05em 1px,
-        1px 1px;
-    background-repeat: no-repeat, no-repeat, repeat-x;
-    text-shadow:
-        0.03em 0 #fffff8,
-        -0.03em 0 #fffff8,
-        0 0.03em #fffff8,
-        0 -0.03em #fffff8,
-        0.06em 0 #fffff8,
-        -0.06em 0 #fffff8,
-        0.09em 0 #fffff8,
-        -0.09em 0 #fffff8,
-        0.12em 0 #fffff8,
-        -0.12em 0 #fffff8,
-        0.15em 0 #fffff8,
-        -0.15em 0 #fffff8;
-    background-position:
-        0% 93%,
-        100% 93%,
-        0% 93%;
-}
-
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-    a:link,
-    .tufte-underline,
-    .hover-tufte-underline:hover {
-        background-position-y: 87%, 87%, 87%;
-    }
-}
-
-/* Adds dark mode */
-@media (prefers-color-scheme: dark) {
-    a:link,
-    .tufte-underline,
-    .hover-tufte-underline:hover {
-        text-shadow:
-            0.03em 0 #151515,
-            -0.03em 0 #151515,
-            0 0.03em #151515,
-            0 -0.03em #151515,
-            0.06em 0 #151515,
-            -0.06em 0 #151515,
-            0.09em 0 #151515,
-            -0.09em 0 #151515,
-            0.12em 0 #151515,
-            -0.12em 0 #151515,
-            0.15em 0 #151515,
-            -0.15em 0 #151515;
-    }
-}
-
-a:link::selection,
-a:link::-moz-selection {
-    text-shadow:
-        0.03em 0 #b4d5fe,
-        -0.03em 0 #b4d5fe,
-        0 0.03em #b4d5fe,
-        0 -0.03em #b4d5fe,
-        0.06em 0 #b4d5fe,
-        -0.06em 0 #b4d5fe,
-        0.09em 0 #b4d5fe,
-        -0.09em 0 #b4d5fe,
-        0.12em 0 #b4d5fe,
-        -0.12em 0 #b4d5fe,
-        0.15em 0 #b4d5fe,
-        -0.15em 0 #b4d5fe;
-    background: #b4d5fe;
-}
-
-/* Sidenotes, margin notes, figures, captions */
+/* Sidenotes and margin notes */
 img {
     max-width: 100%;
 }
@@ -313,7 +109,6 @@ img {
     margin-bottom: 0;
     font-size: 0.75rem;
     line-height: 1.3;
-    vertical-align: baseline;
     position: relative;
 }
 
@@ -324,7 +119,6 @@ img {
 .sidenote-number:after,
 .sidenote:before {
     position: relative;
-    vertical-align: baseline;
 }
 
 .sidenote-number:after {
@@ -340,101 +134,20 @@ img {
     top: -0.5rem;
 }
 
-blockquote .sidenote,
-blockquote .marginnote {
-    margin-right: -82%;
-    min-width: 59%;
-    text-align: left;
-}
-
-div.fullwidth,
-table.fullwidth {
-    width: 100%;
-}
-
-div.table-wrapper {
-    overflow-x: auto;
-    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
-}
-
-.sans {
-    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
-    letter-spacing: 0.03em;
-}
-
-code,
-pre > code {
-    font-family: Menlo, Consolas, Monaco, Adwaita Mono, Liberation Mono, Lucida Console, monospace;
-    font-size: 0.7rem;
-    line-height: 1.42;
-    -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
-}
-
-.sans > code {
-    font-size: 0.85rem;
-}
-
-h1 > code,
-h2 > code,
-h3 > code {
-    font-size: 0.8em;
-}
-
-.marginnote > code,
-.sidenote > code {
-    font-size: 0.7rem;
-}
-
-pre > code {
-    font-size: 0.65rem;
-    width: 52.5%;
-    margin-left: 2.5%;
-    overflow-x: auto;
-    display: block;
-}
-
-pre.fullwidth > code {
-    width: 90%;
-}
-
-.fullwidth {
-    max-width: 90%;
-    clear: both;
-}
-
-span.newthought {
-    font-variant: small-caps;
-    font-size: 1.2em;
-}
-
 input.margin-toggle {
     display: none;
 }
 
 label.sidenote-number {
     display: inline-block;
-    max-height: 2rem; /* should be less than or equal to paragraph line-height */
+    max-height: 2rem;
 }
 
 label.margin-toggle:not(.sidenote-number) {
     display: none;
 }
 
-.iframe-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    padding-top: 25px;
-    height: 0;
-}
-
-.iframe-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
+/* Mobile */
 @media (max-width: 760px) {
     body {
         width: 90%;
@@ -442,40 +155,7 @@ label.margin-toggle:not(.sidenote-number) {
         padding-right: 5%;
     }
 
-    hr,
-    section > p,
-    section > footer,
-    section > table {
-        width: 100%;
-    }
-
-    pre > code {
-        width: 97%;
-    }
-
-    section > dl,
-    section > ol,
-    section > ul {
-        width: 90%;
-    }
-
-    figure {
-        max-width: 90%;
-    }
-
-    figcaption,
-    figure.fullwidth figcaption {
-        margin-right: 0%;
-        max-width: none;
-    }
-
-    blockquote {
-        margin-left: 1.5em;
-        margin-right: 0em;
-    }
-
-    blockquote p,
-    blockquote footer {
+    section > p {
         width: 100%;
     }
 
@@ -496,17 +176,11 @@ label.margin-toggle:not(.sidenote-number) {
         clear: both;
         width: 95%;
         margin: 1rem 2.5%;
-        vertical-align: baseline;
         position: relative;
     }
 
     label {
         cursor: pointer;
-    }
-
-    div.table-wrapper,
-    table {
-        width: 85%;
     }
 
     img {
